@@ -1,0 +1,17 @@
+.block-list {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.block {
+  display: block;
+  border-radius: 0.2rem;
+  background: #0000001f;
+  margin: 0.3rem;
+  padding: 0.2rem;
+}
+
+.block-number {
+  color: #304ffe;
+  font-size: x-small;
+}

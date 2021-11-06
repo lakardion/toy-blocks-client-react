@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import "./Node.css";
 import {
   Accordion,
   AccordionSummary,
@@ -11,9 +12,12 @@ import {
 } from "@material-ui/core";
 import colors from "../constants/colors";
 import Status from "./Status";
+import fetch from "cross-fetch";
+import NodeBlockList from "./NodeBlockList";
 
 const Node = ({ node, expanded, toggleNodeExpanded }) => {
   const classes = useStyles();
+
   return (
     <Accordion
       elevation={3}
@@ -46,7 +50,7 @@ const Node = ({ node, expanded, toggleNodeExpanded }) => {
         </Box>
       </AccordionSummary>
       <AccordionDetails>
-        <Typography>Blocks go here</Typography>
+        <NodeBlockList node={node} />
       </AccordionDetails>
     </Accordion>
   );
